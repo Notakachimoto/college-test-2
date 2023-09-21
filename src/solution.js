@@ -7,7 +7,7 @@ export default (content) => {
     // Второе Задание
     const strength = rows.map((row) => row[2]);
 
-    const strongest = Number(strength)
-    console.log(strongest);
+    // const strongest = Number(strength)
+    console.log(strength.join(''));
 
 }
