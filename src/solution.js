@@ -7,7 +7,7 @@ export default (content) => {
     console.log(`Количество рядов: ${data.length}`) 
 
     const make_hero = (content) => {
-        const bobi = {race:content[0], stronge:parseInt(content[1]), health:content[2], division:content[3], hight:content[4], kg:content[5], price:content[6]}
+        const bobi = {race:content[0], stronge:parseInt(content[1]), health:content[2], division:parseInt(content[3]), hight:content[4], kg:parseInt(content[5]), price:content[6]}
         return bobi;
     };
          const rows = data.map((row) => row 
@@ -18,15 +18,24 @@ export default (content) => {
          ); 
 
     const jopa = rows.map((row) => make_hero(row));
-    const jopa1 = jopa.map((row) => row.stronge)
-    const jopa2 = Math.max(...jopa1)
-    const jopa3 = jopa.filter((el) => el.stronge === jopa2)
-    console.log(jopa3[0].price * 10)
-    const jopa4 = jopa.filter((el) => el.stronge !== jopa2)
-    const jopa7 = jopa4.map((el) => el.stronge)
-    const jopa5 = Math.max(...jopa7)
-    const jopa6 = jopa4.filter((el) => el.stronge === jopa5)
-    console.log(jopa6[0].price * 20)
+    const jopa1 = jopa.map((row) => row.stronge);
+    const jopa2 = Math.max(...jopa1);
+    const jopa3 = jopa.filter((row) => row.stronge === jopa2);
+    console.log(jopa3[0].price * 10);
+    const jopa4 = jopa.filter((row) => row.stronge !== jopa2);
+    const jopa5 = jopa4.map((row) => row.stronge);
+    const jopa6 = Math.max(...jopa5);
+    const jopa7 = jopa.filter((row) => row.stronge === jopa6)
+    console.log(jopa7[0].price*20)
+
+    const xui = jopa.map((row) => row.kg);
+    const xui2 = Math.max(...xui);
+    const xui3 = jopa.filter((row) => row.kg === xui2);
+    const mintolstii = Math.min(...xui);
+    const minkg = jopa.filter((row) => row.kg === mintolstii )
+    console.log(xui3[0].price * xui3[0].division)
+    console.log(minkg[0].price * minkg[0].division)
+
 
     // // Второе задание
 
