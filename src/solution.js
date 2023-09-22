@@ -1,6 +1,10 @@
 export default (content) => { 
+
+    //  Первое задание
     const data = content.split('\n').slice(1); 
-    console.log(`Количество рядов существ: ${data.length}`) 
+    console.log(`Количество рядов: ${data.length}`) 
+
+    // Второе задание
  
     const rows = data.map((row) => row 
     .split('|') 
@@ -19,8 +23,9 @@ export default (content) => {
     strengthsWithoutStrongest[strongestIndex] = 0; 
     const secondStrongestIndex = strengthsWithoutStrongest.indexOf(Math.max(...strengthsWithoutStrongest)); 
      
-    console.log(`Цена за 10 сильнейших созданий: ${price[strongestIndex]*10}`); 
-    console.log(`Цена за 20 вторых по силе созданий: ${price[secondStrongestIndex]*20}`); 
- 
+    console.log(`цена за 10 сильнейших созданий: ${price[strongestIndex]*10}`); 
+    console.log(`цена за 20 вторых по силе созданий: ${price[secondStrongestIndex]*20}`);
 
+ 
+    
 }
